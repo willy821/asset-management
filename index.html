@@ -105,7 +105,7 @@
   </div>
 
   <!-- ══════════════════════════════════════════════
-       NAVIGATION BAR (sticky, transparent → solid)
+       NAVIGATION BAR (sticky, transparent → white)
   ══════════════════════════════════════════════ -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
@@ -137,36 +137,59 @@
          HERO SECTION
     ══════════════════════════════════════════════ -->
     <section class="hero" id="home" aria-label="Hero">
-      <!-- Radial glow overlay -->
-      <div class="hero-glow" aria-hidden="true"></div>
-      <!-- Decorative grid lines -->
-      <div class="hero-grid" aria-hidden="true"></div>
-      <!-- Decorative circles -->
-      <div class="hero-circles" aria-hidden="true">
-        <div class="h-circle hc-1"></div>
-        <div class="h-circle hc-2"></div>
-        <div class="h-circle hc-3"></div>
-      </div>
-
       <div class="hero-body">
-        <!-- Main copy -->
-        <div class="hero-copy hero-animate-1">
-          <span class="hero-badge">Trusted Since 2008</span>
-          <h1 class="hero-headline">
-            Grow Your Wealth<br>with Confidence
-          </h1>
-          <p class="hero-sub">
-            We provide personalized, data-driven investment strategies to help you
-            build, protect, and grow your wealth — across every market condition.
-          </p>
-          <div class="hero-cta">
-            <a href="#contact" class="btn btn-gold">Get Started</a>
-            <a href="#why-us"  class="btn btn-ghost">Learn More</a>
-          </div>
-        </div>
 
-        <!-- Animated statistics bar -->
-        <div class="hero-stats hero-animate-2" aria-label="Key statistics">
+        <!-- Two-column content row: copy left, visual right -->
+        <div class="hero-content">
+
+          <!-- Left: main copy -->
+          <div class="hero-copy hero-animate-1">
+            <span class="hero-badge">Trusted Since 2008</span>
+            <h1 class="hero-headline">
+              Grow Your Wealth<br>with Confidence
+            </h1>
+            <p class="hero-sub">
+              We provide personalized, data-driven investment strategies to help you
+              build, protect, and grow your wealth — across every market condition.
+            </p>
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-navy">Get Started</a>
+              <a href="#why-us"  class="btn btn-outline">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Right: decorative visual card -->
+          <div class="hero-visual hero-animate-2" aria-hidden="true">
+            <div class="hv-bg">
+              <div class="hv-ring hv-r1"></div>
+              <div class="hv-ring hv-r2"></div>
+              <div class="hv-ring hv-r3"></div>
+            </div>
+            <div class="hv-card">
+              <div class="hvc-header">
+                <span class="hvc-dot"></span>
+                <span class="hvc-label">Portfolio Performance</span>
+              </div>
+              <p class="hvc-value">+34.2%</p>
+              <p class="hvc-sub">3-year cumulative return</p>
+              <svg class="hvc-chart" viewBox="0 0 160 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,50 L25,42 L50,46 L75,28 L100,32 L130,12 L160,4"
+                      stroke="#c9a84c" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M0,50 L25,42 L50,46 L75,28 L100,32 L130,12 L160,4 L160,56 L0,56 Z"
+                      fill="rgba(201,168,76,0.1)"/>
+              </svg>
+            </div>
+            <div class="hv-pill">
+              <span class="hv-pill-dot"></span>
+              $2.4B Assets Under Management
+            </div>
+          </div>
+
+        </div><!-- /hero-content -->
+
+        <!-- Statistics strip -->
+        <div class="hero-stats hero-animate-3" aria-label="Key statistics">
           <div class="stat-item">
             <span class="stat-num"
                   data-prefix="$"
@@ -201,7 +224,8 @@
             <span class="stat-label">Client Retention Rate</span>
           </div>
         </div>
-      </div>
+
+      </div><!-- /hero-body -->
     </section>
 
     <!-- ══════════════════════════════════════════════
@@ -221,9 +245,9 @@
             <div class="card-icon-wrap" aria-hidden="true">
               <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 4L4 12V20C4 28.837 11.163 37 20 39C28.837 37 36 28.837 36 20V12L20 4Z"
-                      stroke="#d4a017" stroke-width="2" stroke-linejoin="round"/>
+                      stroke="#c9a84c" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M13 20.5L17.5 25L27 15.5"
-                      stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <h3 class="card-title">Personalized Strategy</h3>
@@ -235,10 +259,10 @@
             <div class="card-icon-wrap" aria-hidden="true">
               <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <polyline points="4,30 13,20 21,25 36,8"
-                          stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <polyline points="28,8 36,8 36,16"
-                          stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="4" y1="36" x2="36" y2="36" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+                          stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="4" y1="36" x2="36" y2="36" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
               </svg>
             </div>
             <h3 class="card-title">Proven Track Record</h3>
@@ -249,10 +273,10 @@
           <article class="feature-card fade-up" aria-label="Transparent Fees">
             <div class="card-icon-wrap" aria-hidden="true">
               <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="5" y="5" width="30" height="30" rx="4" stroke="#d4a017" stroke-width="2"/>
-                <line x1="12" y1="14" x2="28" y2="14" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
-                <line x1="12" y1="20" x2="28" y2="20" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
-                <line x1="12" y1="26" x2="21" y2="26" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+                <rect x="5" y="5" width="30" height="30" rx="4" stroke="#c9a84c" stroke-width="2"/>
+                <line x1="12" y1="14" x2="28" y2="14" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="20" x2="28" y2="20" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="26" x2="21" y2="26" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
             <h3 class="card-title">Transparent Fees</h3>
@@ -263,11 +287,11 @@
           <article class="feature-card fade-up" aria-label="Expert Advisors">
             <div class="card-icon-wrap" aria-hidden="true">
               <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="14" r="7" stroke="#d4a017" stroke-width="2"/>
+                <circle cx="20" cy="14" r="7" stroke="#c9a84c" stroke-width="2"/>
                 <path d="M7 37C7 30.373 13.044 25 20 25C26.956 25 33 30.373 33 37"
-                      stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="32" cy="10" r="4" fill="#d4a017" opacity="0.2" stroke="#d4a017" stroke-width="1.5"/>
-                <path d="M30.5 10L31.5 11.2L34 8.5" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="10" r="4" fill="#c9a84c" opacity="0.2" stroke="#c9a84c" stroke-width="1.5"/>
+                <path d="M30.5 10L31.5 11.2L34 8.5" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <h3 class="card-title">Expert Advisors</h3>
@@ -359,18 +383,12 @@
 
     <!-- ══════════════════════════════════════════════
          ENQUIRY FORM
-         FormSubmit.co handles delivery; no backend required.
-         IMPORTANT: Replace "lunpin.hon@redbeaconam.com" with your
-         actual receiving address in the <form action="..."> below.
-         On the very FIRST submission FormSubmit will email you a
-         one-time confirmation link — click it to activate the
-         endpoint. Subsequent submissions are delivered normally.
     ══════════════════════════════════════════════ -->
     <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-layout">
 
-          <!-- Left: info panel -->
+          <!-- Left: navy info panel -->
           <div class="contact-info fade-up">
             <p class="section-eyebrow">Reach Out</p>
             <h2 class="section-title" id="contact-title">Get in Touch</h2>
@@ -398,7 +416,6 @@
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                   </svg>
                 </span>
-                <!-- TODO: replace with your actual email address -->
                 <span>lunpin.hon@redbeaconam.com</span>
               </li>
             </ul>
@@ -406,12 +423,6 @@
 
           <!-- Right: form -->
           <div class="form-card fade-up">
-            <!--
-              ACTION: Replace "lunpin.hon@redbeaconam.com" with your email.
-              First submission activates the endpoint (check your inbox).
-              We submit via fetch (async) — the _next redirect is only a
-              fallback for non-JS environments.
-            -->
             <form id="contact-form"
                   action="https://formsubmit.co/lunpin.hon@redbeaconam.com"
                   method="POST"
@@ -421,9 +432,8 @@
               <input type="hidden" name="_subject"  value="New Enquiry — Red Beacon Asset Management">
               <input type="hidden" name="_captcha"  value="false">
               <input type="hidden" name="_template" value="table">
-              <!-- TODO: update _next to your actual site URL or a dedicated thank-you page -->
               <input type="hidden" name="_next"     value="https://yourwebsite.com/#contact">
-              <!-- Honeypot anti-spam field (hidden via CSS on server side) -->
+              <!-- Honeypot anti-spam -->
               <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
 
               <div class="form-row">
@@ -466,7 +476,6 @@
                           placeholder="Tell us about your investment goals or any questions you have…"></textarea>
               </div>
 
-              <!-- Inline success / error feedback -->
               <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
 
               <button type="submit" class="btn btn-gold btn-submit" id="submit-btn">

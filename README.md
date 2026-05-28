@@ -19,6 +19,7 @@ A static one-page marketing website for **Red Beacon Asset Management** — a Si
 | **Testimonials** | Auto-rotating carousel with touch/swipe support, dot indicators, and pause-on-hover |
 | **Contact Form** | Async FormSubmit.co delivery, inline field validation, loading spinner, success/error feedback |
 | **Footer** | Brand, quick links, services, legal columns; social icons; risk disclosure |
+| **WhatsApp Chatbot** | Star Wars themed floating button (bottom-left); pulse ring, Yoda tooltip, pre-filled message, mobile-responsive |
 
 ---
 

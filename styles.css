@@ -1272,3 +1272,129 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
   .carousel-track { transition: none; }
 }
+
+/* === WHATSAPP FLOATING CHATBOT (Star Wars) === */
+
+:root {
+  --sw-bg:           #0a0a0f;
+  --sw-border:       #FFE81F;
+  --sw-icon:         #25D366;
+  --sw-tooltip-bg:   rgba(10,10,15,0.95);
+  --sw-tooltip-text: #FFE81F;
+  --sw-pulse:        rgba(255,232,31,0.35);
+}
+
+.sw-wa-wrap {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.sw-wa-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--sw-bg);
+  border: 2px solid var(--sw-border);
+  color: var(--sw-icon);
+  box-shadow: 0 4px 20px rgba(255,232,31,0.25), 0 2px 8px rgba(0,0,0,0.4);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sw-wa-btn:hover,
+.sw-wa-btn:focus-visible {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(255,232,31,0.45), 0 2px 12px rgba(0,0,0,0.5);
+  outline: none;
+}
+
+.sw-wa-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--sw-icon);
+}
+
+.sw-wa-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--sw-pulse);
+  transform: translate(-50%, -50%) scale(1);
+  animation: sw-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sw-pulse {
+  0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.8; }
+  70%  { transform: translate(-50%, -50%) scale(1.75); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1.75); opacity: 0; }
+}
+
+.sw-wa-tooltip {
+  background: var(--sw-tooltip-bg);
+  border: 1px solid var(--sw-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+  order: -1;
+}
+
+.sw-wa-wrap:hover .sw-wa-tooltip,
+.sw-wa-wrap:focus-within .sw-wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sw-wa-quote {
+  margin: 0 0 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--sw-tooltip-text);
+  letter-spacing: 0.01em;
+}
+
+.sw-wa-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .sw-wa-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .sw-wa-pulse {
+    width: 48px;
+    height: 48px;
+  }
+  .sw-wa-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .sw-wa-tooltip {
+    display: none;
+  }
+}

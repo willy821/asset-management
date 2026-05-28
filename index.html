@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Red Beacon Asset Management — Personalized, data-driven investment strategies to grow and protect your wealth.">
+  <title>Red Beacon Asset Management</title>
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       DISCLAIMER GATE
+       Shown on every visit; user must acknowledge
+       before the page content is accessible.
+  ══════════════════════════════════════════════ -->
+  <div class="disclaimer-overlay" id="disclaimer-overlay"
+       role="dialog" aria-modal="true"
+       aria-labelledby="disclaimer-title"
+       aria-describedby="disclaimer-body">
+    <div class="disclaimer-modal">
+      <div class="disclaimer-warning-bar" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        Important Notice
+      </div>
+
+      <div class="disclaimer-logo" aria-hidden="true">
+        <span class="logo-beacon">◆</span>
+        Red Beacon Asset Management
+      </div>
+
+      <h2 class="disclaimer-title" id="disclaimer-title">Disclaimer &amp; Fraud Warning</h2>
+
+      <div class="disclaimer-body" id="disclaimer-body">
+        <div class="disclaimer-point">
+          <span class="dp-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              <line x1="9" y1="10" x2="15" y2="10"/>
+            </svg>
+          </span>
+          <p>
+            <strong>Red Beacon Asset Management does not utilise LINE Chat</strong>
+            or any other third-party messaging application for official communications
+            with clients or members of the public.
+          </p>
+        </div>
+
+        <div class="disclaimer-point">
+          <span class="dp-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+          </span>
+          <p>
+            We are aware of <strong>individuals posing as our employees</strong> and
+            misrepresenting our brand for deceptive activities. Please exercise caution
+            and do not engage with anyone claiming to represent Red Beacon Asset
+            Management through unauthorised channels.
+          </p>
+        </div>
+
+        <div class="disclaimer-point">
+          <span class="dp-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <p>
+            If you have questions regarding this disclaimer, please contact
+            RB personnel directly at
+            <a href="mailto:testing@redbeaconam.com" class="disclaimer-link">
+              testing@redbeaconam.com
+            </a>.
+          </p>
+        </div>
+      </div>
+
+      <button class="btn btn-gold disclaimer-accept" id="disclaimer-accept">
+        I Acknowledge &amp; Enter Site
+      </button>
+
+      <p class="disclaimer-footer-note">
+        By clicking above you confirm you have read and understood this notice.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION BAR (sticky, transparent → solid)
+  ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-beacon" aria-hidden="true">◆</span>
+        Red Beacon Asset Management
+      </a>
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="nav-links">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home"         class="nav-link">Home</a></li>
+        <li><a href="#why-us"       class="nav-link">Why Us</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact"      class="nav-link nav-link-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════════════ -->
+    <section class="hero" id="home" aria-label="Hero">
+      <!-- Radial glow overlay -->
+      <div class="hero-glow" aria-hidden="true"></div>
+      <!-- Decorative grid lines -->
+      <div class="hero-grid" aria-hidden="true"></div>
+      <!-- Decorative circles -->
+      <div class="hero-circles" aria-hidden="true">
+        <div class="h-circle hc-1"></div>
+        <div class="h-circle hc-2"></div>
+        <div class="h-circle hc-3"></div>
+      </div>
+
+      <div class="hero-body">
+        <!-- Main copy -->
+        <div class="hero-copy hero-animate-1">
+          <span class="hero-badge">Trusted Since 2008</span>
+          <h1 class="hero-headline">
+            Grow Your Wealth<br>with Confidence
+          </h1>
+          <p class="hero-sub">
+            We provide personalized, data-driven investment strategies to help you
+            build, protect, and grow your wealth — across every market condition.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-gold">Get Started</a>
+            <a href="#why-us"  class="btn btn-ghost">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Animated statistics bar -->
+        <div class="hero-stats hero-animate-2" aria-label="Key statistics">
+          <div class="stat-item">
+            <span class="stat-num"
+                  data-prefix="$"
+                  data-target="2.4"
+                  data-suffix="B+"
+                  data-decimals="1"
+                  aria-live="polite">$0B+</span>
+            <span class="stat-label">Assets Under Management</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num"
+                  data-prefix=""
+                  data-target="1200"
+                  data-suffix="+"
+                  aria-live="polite">0+</span>
+            <span class="stat-label">Clients Served</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num"
+                  data-prefix=""
+                  data-target="16"
+                  data-suffix="+"
+                  aria-live="polite">0+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num"
+                  data-prefix=""
+                  data-target="94"
+                  data-suffix="%"
+                  aria-live="polite">0%</span>
+            <span class="stat-label">Client Retention Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         WHY CHOOSE US (USP)
+    ══════════════════════════════════════════════ -->
+    <section class="why-us section-pad" id="why-us" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section-header fade-up">
+          <p class="section-eyebrow">Our Advantages</p>
+          <h2 class="section-title" id="why-title">Why Choose Us</h2>
+          <p class="section-sub">We combine decades of expertise with cutting-edge analytics to deliver outcomes that matter.</p>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Card: Personalized Strategy -->
+          <article class="feature-card fade-up" aria-label="Personalized Strategy">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4L4 12V20C4 28.837 11.163 37 20 39C28.837 37 36 28.837 36 20V12L20 4Z"
+                      stroke="#d4a017" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M13 20.5L17.5 25L27 15.5"
+                      stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Personalized Strategy</h3>
+            <p class="card-desc">Every portfolio is crafted around your unique goals, timeline, and risk tolerance — never a one-size-fits-all approach.</p>
+          </article>
+
+          <!-- Card: Proven Track Record -->
+          <article class="feature-card fade-up" aria-label="Proven Track Record">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="4,30 13,20 21,25 36,8"
+                          stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="28,8 36,8 36,16"
+                          stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="4" y1="36" x2="36" y2="36" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Proven Track Record</h3>
+            <p class="card-desc">Consistent above-market returns across 16 years, through multiple economic cycles, guided by a disciplined investment philosophy.</p>
+          </article>
+
+          <!-- Card: Transparent Fees -->
+          <article class="feature-card fade-up" aria-label="Transparent Fees">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="5" width="30" height="30" rx="4" stroke="#d4a017" stroke-width="2"/>
+                <line x1="12" y1="14" x2="28" y2="14" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="20" x2="28" y2="20" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="26" x2="21" y2="26" stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Transparent Fees</h3>
+            <p class="card-desc">No hidden charges or confusing structures. We believe full transparency builds trust — you always know exactly what you pay for.</p>
+          </article>
+
+          <!-- Card: Expert Advisors -->
+          <article class="feature-card fade-up" aria-label="Expert Advisors">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="14" r="7" stroke="#d4a017" stroke-width="2"/>
+                <path d="M7 37C7 30.373 13.044 25 20 25C26.956 25 33 30.373 33 37"
+                      stroke="#d4a017" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="10" r="4" fill="#d4a017" opacity="0.2" stroke="#d4a017" stroke-width="1.5"/>
+                <path d="M30.5 10L31.5 11.2L34 8.5" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Expert Advisors</h3>
+            <p class="card-desc">Our team holds CFA and CFP designations, bringing institutional-grade expertise to every individual client relationship.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         TESTIMONIALS (auto-rotating carousel)
+    ══════════════════════════════════════════════ -->
+    <section class="testimonials section-pad" id="testimonials" aria-labelledby="testi-title">
+      <div class="container">
+        <header class="section-header fade-up">
+          <p class="section-eyebrow">Client Stories</p>
+          <h2 class="section-title" id="testi-title">What Our Clients Say</h2>
+          <p class="section-sub">Real results from real people who trusted us with their financial future.</p>
+        </header>
+
+        <div class="carousel-outer fade-up">
+          <!-- Slides -->
+          <div class="carousel-viewport" role="region" aria-label="Testimonials carousel" aria-live="polite">
+            <div class="carousel-track" id="carousel-track">
+
+              <!-- Slide 1 -->
+              <div class="testi-card" role="group" aria-label="Testimonial 1 of 3">
+                <span class="big-quote" aria-hidden="true">&ldquo;</span>
+                <p class="testi-quote">Red Beacon transformed my retirement planning. Their team took the time to understand my goals and built a diversified portfolio that has consistently outperformed my expectations. I sleep soundly knowing my future is in expert hands.</p>
+                <footer class="testi-author">
+                  <div class="avatar" style="--av-bg:#1a3a5c;" aria-hidden="true">JL</div>
+                  <div>
+                    <strong class="author-name">James Lim</strong>
+                    <span class="author-role">Retired Engineer, Age 68</span>
+                  </div>
+                </footer>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="testi-card" role="group" aria-label="Testimonial 2 of 3" aria-hidden="true">
+                <span class="big-quote" aria-hidden="true">&ldquo;</span>
+                <p class="testi-quote">As a small business owner, I needed someone who understood the complexities of managing both personal and business wealth. Red Beacon's advisors are exceptional — proactive, knowledgeable, and always available when I need them.</p>
+                <footer class="testi-author">
+                  <div class="avatar" style="--av-bg:#1e4a2e;" aria-hidden="true">SN</div>
+                  <div>
+                    <strong class="author-name">Sarah Ng</strong>
+                    <span class="author-role">Small Business Owner</span>
+                  </div>
+                </footer>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="testi-card" role="group" aria-label="Testimonial 3 of 3" aria-hidden="true">
+                <span class="big-quote" aria-hidden="true">&ldquo;</span>
+                <p class="testi-quote">I was skeptical after bad experiences elsewhere. Red Beacon won me over with absolute transparency and a fee structure that made sense. My portfolio has grown 34% over three years — the results speak for themselves.</p>
+                <footer class="testi-author">
+                  <div class="avatar" style="--av-bg:#4a1f1f;" aria-hidden="true">MR</div>
+                  <div>
+                    <strong class="author-name">Michael Raj</strong>
+                    <span class="author-role">Senior Executive, Tech Industry</span>
+                  </div>
+                </footer>
+              </div>
+
+            </div><!-- /carousel-track -->
+          </div><!-- /carousel-viewport -->
+
+          <!-- Controls -->
+          <div class="carousel-controls" role="group" aria-label="Carousel controls">
+            <button class="c-btn" id="prev-btn" aria-label="Previous testimonial">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M11 4L6 9L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="c-dots" id="c-dots" role="tablist" aria-label="Testimonial indicators">
+              <button class="dot active" role="tab" aria-selected="true"  aria-label="Testimonial 1" data-idx="0"></button>
+              <button class="dot"        role="tab" aria-selected="false" aria-label="Testimonial 2" data-idx="1"></button>
+              <button class="dot"        role="tab" aria-selected="false" aria-label="Testimonial 3" data-idx="2"></button>
+            </div>
+            <button class="c-btn" id="next-btn" aria-label="Next testimonial">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div><!-- /carousel-outer -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         ENQUIRY FORM
+         FormSubmit.co handles delivery; no backend required.
+         IMPORTANT: Replace "lunpin.hon@redbeaconam.com" with your
+         actual receiving address in the <form action="..."> below.
+         On the very FIRST submission FormSubmit will email you a
+         one-time confirmation link — click it to activate the
+         endpoint. Subsequent submissions are delivered normally.
+    ══════════════════════════════════════════════ -->
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Left: info panel -->
+          <div class="contact-info fade-up">
+            <p class="section-eyebrow">Reach Out</p>
+            <h2 class="section-title" id="contact-title">Get in Touch</h2>
+            <p class="contact-blurb">Ready to take control of your financial future? Our advisors are here to listen, guide, and create a plan tailored specifically to you.</p>
+            <ul class="contact-details" aria-label="Contact information">
+              <li>
+                <span class="ci-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
+                <span>1 Raffles Place, #20-01, Singapore 048616</span>
+              </li>
+              <li>
+                <span class="ci-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <span>+65 6XXX XXXX</span>
+              </li>
+              <li>
+                <span class="ci-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </span>
+                <!-- TODO: replace with your actual email address -->
+                <span>lunpin.hon@redbeaconam.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: form -->
+          <div class="form-card fade-up">
+            <!--
+              ACTION: Replace "lunpin.hon@redbeaconam.com" with your email.
+              First submission activates the endpoint (check your inbox).
+              We submit via fetch (async) — the _next redirect is only a
+              fallback for non-JS environments.
+            -->
+            <form id="contact-form"
+                  action="https://formsubmit.co/lunpin.hon@redbeaconam.com"
+                  method="POST"
+                  novalidate>
+
+              <!-- FormSubmit configuration -->
+              <input type="hidden" name="_subject"  value="New Enquiry — Red Beacon Asset Management">
+              <input type="hidden" name="_captcha"  value="false">
+              <input type="hidden" name="_template" value="table">
+              <!-- TODO: update _next to your actual site URL or a dedicated thank-you page -->
+              <input type="hidden" name="_next"     value="https://yourwebsite.com/#contact">
+              <!-- Honeypot anti-spam field (hidden via CSS on server side) -->
+              <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-name">Full Name <abbr title="required" aria-label="required" class="req">*</abbr></label>
+                  <input type="text" id="f-name" name="name"
+                         placeholder="John Smith" required autocomplete="name">
+                  <span class="field-err" id="err-name" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="f-email">Email Address <abbr title="required" aria-label="required" class="req">*</abbr></label>
+                  <input type="email" id="f-email" name="email"
+                         placeholder="john@example.com" required autocomplete="email">
+                  <span class="field-err" id="err-email" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-phone">Phone Number</label>
+                  <input type="tel" id="f-phone" name="phone"
+                         placeholder="+65 9XXX XXXX" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label for="f-invest">Investment Range <abbr title="required" aria-label="required" class="req">*</abbr></label>
+                  <select id="f-invest" name="investment_range" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="Under $50,000">Under $50,000</option>
+                    <option value="$50,000 – $250,000">$50,000 – $250,000</option>
+                    <option value="$250,000 – $1,000,000">$250,000 – $1,000,000</option>
+                    <option value="$1,000,000+">$1,000,000+</option>
+                  </select>
+                  <span class="field-err" id="err-invest" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="f-message">Message</label>
+                <textarea id="f-message" name="message" rows="5"
+                          placeholder="Tell us about your investment goals or any questions you have…"></textarea>
+              </div>
+
+              <!-- Inline success / error feedback -->
+              <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn-gold btn-submit" id="submit-btn">
+                <span class="btn-label">Send Enquiry</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+
+        </div><!-- /contact-layout -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand + social -->
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo" aria-label="Red Beacon Asset Management home">
+            <span class="logo-beacon" aria-hidden="true">◆</span>
+            Red Beacon Asset Management
+          </a>
+          <p class="footer-tagline">Building wealth, protecting futures,<br>one client at a time.</p>
+          <div class="social-row" aria-label="Social media links">
+            <a href="#" class="soc-link" aria-label="LinkedIn" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="soc-link" aria-label="X (formerly Twitter)" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="soc-link" aria-label="Facebook" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <nav class="footer-col" aria-label="Quick links">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Services -->
+        <nav class="footer-col" aria-label="Services">
+          <h4 class="footer-col-title">Services</h4>
+          <ul>
+            <li><a href="#contact">Wealth Management</a></li>
+            <li><a href="#contact">Retirement Planning</a></li>
+            <li><a href="#contact">Portfolio Advisory</a></li>
+            <li><a href="#contact">Estate Planning</a></li>
+          </ul>
+        </nav>
+
+        <!-- Legal -->
+        <nav class="footer-col" aria-label="Legal">
+          <h4 class="footer-col-title">Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Regulatory Disclosures</a></li>
+          </ul>
+        </nav>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="copy-year"></span> Red Beacon Asset Management. All rights reserved.
+        </p>
+        <p class="footer-disclaimer">
+          <strong>Risk Disclosure:</strong>
+          Investments carry risk. Past performance does not guarantee future results.
+          Please read all investment documentation carefully before making financial decisions.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
